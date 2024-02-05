@@ -1,4 +1,4 @@
-public interface DataProcessingAPI {
+public interface UserAPI {
     void setInput(int input);
     //between input and result
     String inputDelimeter(String delim1);
