@@ -5,4 +5,4 @@
  This program will have a limit of 60 iterations in order to prove that it is in fact a lychrel number.
 
  # System Diagram
- ![System Diagram](https://github.com/michael-scotto/CPS353-Project/blob/main/SystemDiagram.png/SystemDiagram.png?raw=true)
+ ![System Diagram](https://github.com/michael-scotto/CPS353-Project/blob/main/SystemDiagram.png?raw=true)
