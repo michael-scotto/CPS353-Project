@@ -4,5 +4,9 @@ public interface UserAPI {
     String inputDelimeter(String delim1);
     //between output and result
     String outputDelimeter(String delim2);
-    void executeJob();
+    
+    void executeJob(String outputDelimeterResult);
+
+    //store each iteration
+    void storeData(List data);
 }
