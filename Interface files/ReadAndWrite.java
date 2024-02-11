@@ -1,9 +1,7 @@
 public interface ReadAndWrite {
-    void cInitialize();
-    //Initializes the data for the computation
-    int cRead();
+    int Read();
     //Reads the data from the computation
-    void cWrite(int input);
+    void Write(int input);
     //Writes data in the computation 
     void recallCompute();
     //recalls the computation 
