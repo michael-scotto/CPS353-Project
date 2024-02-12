@@ -1,8 +1,8 @@
 import java.util.ArrayList;
 
-public class TestInput<E>{
+public class TestInput {
     List<Integer> input;
-    public class TestInput(){
+    public TestInput(){
         this.input = new ArrayList<Integer>;
     }
 }
