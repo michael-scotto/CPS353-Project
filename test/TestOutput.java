@@ -1,8 +1,8 @@
 import java.util.ArrayList;
 
-public class TestOutput<E>{
+public class TestOutput{
     List<String> output;
-    public class TestOutput(){
+    public TestOutput(){
         this.input = new ArrayList<String>;
     }
 }
