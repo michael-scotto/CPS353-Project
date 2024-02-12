@@ -3,10 +3,86 @@ package test;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
-public class UserAPITest {
-    @Test
-    public void testDelimeter() {
-        Mockito delim = Mockito.mock(Mockito.class);
+import java.util.ArrayList;
+import java.util.List;
 
+public class UserAPIImplTest {
+
+    @Test
+    public void testSetInput() {
+        DataStoreAPI dataStoreAPI = Mockito.mock(DataStoreAPI.class);
+        UserAPIImpl userAPI = new UserAPIImpl(dataStoreAPI);
+        int input = 10;
+
+        userAPI.setInput(input);
+
+    }
+
+    @Test
+    public void testInputDelimiter() {
+        DataStoreAPI dataStoreAPI = Mockito.mock(DataStoreAPI.class);
+        UserAPIImpl userAPI = new UserAPIImpl(dataStoreAPI);
+        String delimiter = ",";
+
+        String result = userAPI.inputDelimiter(delimiter);
+
+        assert result.isEmpty();
+    }
+
+    @Test
+    public void testOutputDelimiter() {
+        DataStoreAPI dataStoreAPI = Mockito.mock(DataStoreAPI.class);
+        UserAPIImpl userAPI = new UserAPIImpl(dataStoreAPI);
+        String delimiter = ";";
+
+        String result = userAPI.outputDelimiter(delimiter);
+
+        assert result.isEmpty();
+    }
+
+    @Test
+    public void testExecuteJob() {
+        DataStoreAPI dataStoreAPI = Mockito.mock(DataStoreAPI.class);
+        UserAPIImpl userAPI = new UserAPIImpl(dataStoreAPI);
+        String output = "result";
+
+        userAPI.executeJob(output);
+
+    }
+
+    @Test
+    public void testStoreData() {
+        DataStoreAPI dataStoreAPI = Mockito.mock(DataStoreAPI.class);
+        UserAPIImpl userAPI = new UserAPIImpl(dataStoreAPI);
+        List<String> data = new ArrayList<>();
+        data.add("data1");
+        data.add("data2");
+
+        userAPI.storeData(data);
+
+    }
+
+    // Smoke Tests
+
+    @Test
+    public void smokeTestInputAndOutputDelimiters() {
+        DataStoreAPI dataStoreAPI = Mockito.mock(DataStoreAPI.class);
+        UserAPIImpl userAPI = new UserAPIImpl(dataStoreAPI);
+        String inputDelimiter = ",";
+        String outputDelimiter = ";";
+
+        userAPI.inputDelimiter(inputDelimiter);
+        userAPI.outputDelimiter(outputDelimiter);
+    }
+
+    @Test
+    public void smokeTestExecuteJob() {
+        DataStoreAPI dataStoreAPI = Mockito.mock(DataStoreAPI.class);
+        UserAPIImpl userAPI = new UserAPIImpl(dataStoreAPI);
+        String output = "result";
+
+        userAPI.executeJob(output);
+
+        // No need to verify individual method calls in a smoke test
     }
 }
