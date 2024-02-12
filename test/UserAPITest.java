@@ -6,7 +6,7 @@ import org.mockito.Mockito;
 import java.util.ArrayList;
 import java.util.List;
 
-public class UserAPIImplementationTest {
+public class UserAPITest {
 
     @Test
     public void testSetInput() {
