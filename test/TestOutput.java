@@ -1,8 +1,9 @@
 import java.util.ArrayList;
+import java.util.List;
 
 public class TestOutput{
     List<String> output;
     public TestOutput(){
-        this.input = new ArrayList<String>;
+        this.output = new ArrayList<>;
     }
 }
