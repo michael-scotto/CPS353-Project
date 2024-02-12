@@ -3,7 +3,7 @@ package test;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
-import static org.mockito.Mockito.*;
+import org.mockito.Mockito.;
 
 public class ComputeJobsTest {
     @Test
