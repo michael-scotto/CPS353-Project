@@ -6,12 +6,12 @@ import org.mockito.Mockito;
 import java.util.ArrayList;
 import java.util.List;
 
-public class UserAPIImplTest {
+public class UserAPIImplementationTest {
 
     @Test
     public void testSetInput() {
         DataStoreAPI dataStoreAPI = Mockito.mock(DataStoreAPI.class);
-        UserAPIImpl userAPI = new UserAPIImpl(dataStoreAPI);
+        UserAPIImpl userAPI = new UserAPIImplementation(dataStoreAPI);
         int input = 10;
 
         userAPI.setInput(input);
@@ -21,7 +21,7 @@ public class UserAPIImplTest {
     @Test
     public void testInputDelimiter() {
         DataStoreAPI dataStoreAPI = Mockito.mock(DataStoreAPI.class);
-        UserAPIImpl userAPI = new UserAPIImpl(dataStoreAPI);
+        UserAPIImpl userAPI = new UserAPIImplementation(dataStoreAPI);
         String delimiter = ",";
 
         String result = userAPI.inputDelimiter(delimiter);
@@ -32,7 +32,7 @@ public class UserAPIImplTest {
     @Test
     public void testOutputDelimiter() {
         DataStoreAPI dataStoreAPI = Mockito.mock(DataStoreAPI.class);
-        UserAPIImpl userAPI = new UserAPIImpl(dataStoreAPI);
+        UserAPIImpl userAPI = new UserAPIImplementation(dataStoreAPI);
         String delimiter = ";";
 
         String result = userAPI.outputDelimiter(delimiter);
@@ -43,7 +43,7 @@ public class UserAPIImplTest {
     @Test
     public void testExecuteJob() {
         DataStoreAPI dataStoreAPI = Mockito.mock(DataStoreAPI.class);
-        UserAPIImpl userAPI = new UserAPIImpl(dataStoreAPI);
+        UserAPIImpl userAPI = new UserAPIImplementation(dataStoreAPI);
         String output = "result";
 
         userAPI.executeJob(output);
@@ -53,7 +53,7 @@ public class UserAPIImplTest {
     @Test
     public void testStoreData() {
         DataStoreAPI dataStoreAPI = Mockito.mock(DataStoreAPI.class);
-        UserAPIImpl userAPI = new UserAPIImpl(dataStoreAPI);
+        UserAPIImpl userAPI = new UserAPIImplementation(dataStoreAPI);
         List<String> data = new ArrayList<>();
         data.add("data1");
         data.add("data2");
@@ -67,7 +67,7 @@ public class UserAPIImplTest {
     @Test
     public void smokeTestInputAndOutputDelimiters() {
         DataStoreAPI dataStoreAPI = Mockito.mock(DataStoreAPI.class);
-        UserAPIImpl userAPI = new UserAPIImpl(dataStoreAPI);
+        UserAPIImpl userAPI = new UserAPIImplementation(dataStoreAPI);
         String inputDelimiter = ",";
         String outputDelimiter = ";";
 
@@ -78,7 +78,7 @@ public class UserAPIImplTest {
     @Test
     public void smokeTestExecuteJob() {
         DataStoreAPI dataStoreAPI = Mockito.mock(DataStoreAPI.class);
-        UserAPIImpl userAPI = new UserAPIImpl(dataStoreAPI);
+        UserAPIImpl userAPI = new UserAPIImplementation(dataStoreAPI);
         String output = "result";
 
         userAPI.executeJob(output);
