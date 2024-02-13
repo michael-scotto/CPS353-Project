@@ -4,7 +4,7 @@ import java.util.List;
 public class TestInput {
     List<Integer> input;
     
-    public TestInput() {
+    public TestInput(List<Integer> list) {
         this.input = new ArrayList<>();
     }
 }
