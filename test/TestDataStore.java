@@ -56,7 +56,7 @@ public class TestDataStore implements DataStoreAPI, ReadAndWrite {
                 output.add("0");
             } else if (input.get(i)==10){
                 output.add("1");
-            } else if (input.get(i)==21){
+            } else if (input.get(i)==25){
                 output.add("1");
             }
         }
