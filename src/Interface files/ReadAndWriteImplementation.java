@@ -7,11 +7,11 @@ public class ReadAndWriteImplementation implements ReadAndWrite {
     private DatabaseConnection databaseConnection;
     //Constructor for connecting to future database
     public ReadAndWriteImplementation(DatabaseConnection databaseConnection){
-        this.databaseConnection = databaseConnection
+        this.databaseConnection = databaseConnection;
     }
     //Writes to the database. int input is provisionary
     public void write(int input){
-        return 0;
+        return;
     }
     //Reads from the database
     public String read(){
