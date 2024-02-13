@@ -11,7 +11,7 @@ public class ReadAndWriteImplementation implements ReadAndWrite {
     }
     //Writes to the database. int input is provisionary
     public void write(int input){
-    
+        return 0;
     }
     //Reads from the database
     public String read(){
