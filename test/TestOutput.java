@@ -4,8 +4,8 @@ import java.util.List;
 public class TestOutput {
     private List<String> output;
   
-    public TestOutput(){
-        this.output = new ArrayList<>();
+    public TestOutput(List<String> list){
+        this.output = list;
     }
 
     public List<String> getOutput() {
