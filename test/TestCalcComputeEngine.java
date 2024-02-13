@@ -11,22 +11,21 @@ public class TestCalcComputeEngine {
 
         TestInput input = new TestInput();
 
-        //add 1, 10, 25 to arraylist
+        //Creates an arraylist of the test values
         List<Integer> list = new ArrayList<>();
         list.add(1);
         list.add(10);
         list.add(25);
 
-        //calling testInput with list to "test" TestInput class with a specific inital input
         input.TestInput(list);
-
-        //calling TestOutput with same list to be tested with a specific intial input
         TestOutput output = new TestOutput();
-        output.TestOutput(list);
-        
-        //throwing list into dataStore for possible future use of list
         TestDataStore dataStore = new TestDataStore();
-        dataStore.performOperation(list);
+        //Creates simulated results to compare to the test
+        TestOutput fake = new TestOutput();
+        fake.TestOutput(dataStore.performOperation(input.input));
+
+        //TODO: write results from empty implimentations to TestOutput, and compare to the simulated results
+        output.TestOutput();
 
 
     }
