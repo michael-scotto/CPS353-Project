@@ -7,7 +7,7 @@ import java.util.List;
 
 public class TestCalcComputeEngine {
     @Test
-    public void CalcComputeEngine() {
+    public void calcComputeEngine() {
 
         TestInput input = new TestInput();
 
