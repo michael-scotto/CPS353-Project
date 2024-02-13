@@ -50,8 +50,16 @@ public class TestDataStore implements DataStoreAPI, ReadAndWrite {
     public List<String> performOperation(List<Integer> input){
         List<String> output;
         output = new ArrayList<>();
-        //TODO: add something to determine the test output
-        //Unsure what to do here - Should it create output data based on what we think would be correct?
+        //asssuming each item of the output list is the # of iterations
+        for (int i=0;i<input.size();i++){
+            if (input.get(i)==1){
+                output.add("0");
+            } else if (input.get(i)==10){
+                output.add("1");
+            } else if (input.get(i)==21){
+                output.add("1");
+            }
+        }
         return output;
     }
 }
