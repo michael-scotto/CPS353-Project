@@ -1,27 +1,40 @@
 package test;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
+import static org.mockito.Mockito.when;
 
 public class ComputeJobsTest {
     @Test
-    public boolean testLychrel(int num) {
-        Mockito number = Mockito.mock(Mockito.class);
-        //reverse num
-        int temp = num;
-        int reverse = 0;
-        while (temp > 0) {
-            int remainder = num % 10;
-            reverse = (reverse * 10) + remainder;
-            temp = temp / 10;
-        }
-        //check if pali
-        if (reverse == num) {
-            return true;
-        } else {
-            //add reveresed to num
-            num += reverse;
-            return testLychrel(num);
-        }
+	public void testComputeWorkflow() {
+        ComputeEngine engine = new ComputeEngineImpl();
+		
+		TestDataStore testDs = new TestDataStore();
+		
+		ComputationCoordinator coord = new CoordinatorImpl(testDs, engine);
+        
+        
+        TestInput input = new TestInput(1, 10, 25);
+
+        TestOutput output = new TestOutput();
+
+        ComputeRequest mockRequest = Mockito.mock(ComputeRequest.class);
+		when(mockRequest.getInputConfig()).thenReturn(input);
+		when(mockRequest.getOutputConfig()).thenReturn(output);
+
+        ComputeResult result = coord.compute(mockRequest);
+		
+		Assert.assertEquals(ComputeResult.SUCCESS, result);
+
+        List<String> expected = new ArrayList<>();
+		expected.add("1");
+		expected.add("10");
+		expected.add("25");
+        
+        Assert.assertEquals(expected, output.getOutputMutable());
     }
+
 }
