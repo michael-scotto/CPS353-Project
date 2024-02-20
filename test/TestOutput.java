@@ -2,18 +2,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class TestOutput {
-    private List<String> output;
+    private final List<String> output = new ArrayList<>();
   
-    public TestOutput(List<String> list){
-        this.output = list;
-    }
 
     public List<String> getOutput() {
         return output;
     }
 
-    public setOutput(List<String> output){
-        this.output = output;
-    }
     
 }
