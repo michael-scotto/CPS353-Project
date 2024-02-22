@@ -13,4 +13,3 @@ public class ComputeJobsTest {
 		Assert.assertEquals("1", engine.compute(1));
 	}
 }
-}
