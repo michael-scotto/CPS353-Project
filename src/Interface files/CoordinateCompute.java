@@ -19,4 +19,11 @@ public interface CoordinateCompute {
 
     //write output for user from data storage
     ReadAndWrite outputResult();
+
+
+    /* ----NOTE-----
+        
+        May need more, not sure at the moment
+
+    */
 }
