@@ -5,23 +5,11 @@ import org.mockito.Mockito;
 
 public class ComputeJobsTest {
     @Test
-    public boolean testLychrel(int num) {
-        Mockito number = Mockito.mock(Mockito.class);
-        //reverse num
-        int temp = num;
-        int reverse = 0;
-        while (temp > 0) {
-            int remainder = num % 10;
-            reverse = (reverse * 10) + remainder;
-            temp = temp / 10;
-        }
-        //check if pali
-        if (reverse == num) {
-            return true;
-        } else {
-            //add reveresed to num
-            num += reverse;
-            return testLychrel(num);
-        }
-    }
+	public void smokeTestCompute() {
+		// The computation component has very simple inputs/outputs and no dependencies, so we can
+		// write a smoke test with no mocks at all
+		
+		ComputeEngine engine = new ComputeEngineImpl();
+		Assert.assertEquals("1", engine.compute(1));
+	}
 }
