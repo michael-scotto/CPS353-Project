@@ -1,6 +1,9 @@
-package src;
+package src.Interfaces;
 
-public class ComputeJobsImplementation implements ComputeJobs{
-    int input;
-    int iterationCount;
+
+public class ComputeJobsImplementation implements ComputeEngine{
+    @Override
+    public String compute(int value) {
+        return "" + value;
+    }
 }
