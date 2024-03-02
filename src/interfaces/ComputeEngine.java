@@ -1,6 +1,4 @@
-package src.Interfaces;
-
-import java.util.List;
+package src.interfaces;
 
 public interface ComputeEngine {
 

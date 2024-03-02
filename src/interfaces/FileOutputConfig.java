@@ -1,4 +1,4 @@
-package src.Interfaces;
+package src.interfaces;
 
 public class FileOutputConfig implements OutputConfig {
 

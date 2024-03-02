@@ -1,4 +1,4 @@
-package src.Interfaces;
+package src.interfaces;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -7,7 +7,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Iterator;
 
-import src.Interfaces.WriteResult.WriteResultStatus;
+import src.interfaces.WriteResult.WriteResultStatus;
 
 public class DataStoreImpl implements DataStore {
 

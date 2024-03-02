@@ -1,4 +1,4 @@
-package src.Interfaces;
+package src.interfaces;
 
 public interface OutputConfig {
     static interface OutputConfigVisitor {
