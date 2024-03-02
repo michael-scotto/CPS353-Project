@@ -2,7 +2,12 @@ package test;
 
 import org.junit.Assert;
 import org.junit.jupiter.api.Test;
-import src.interfaces.*;
+import src.interfaces.DataStore;
+import src.interfaces.DataStoreImpl;
+import src.interfaces.FileInputConfig;
+import src.interfaces.InputConfig;
+import src.interfaces.OutputConfig;
+import src.interfaces.FileOutputConfig;
 import src.interfaces.WriteResult.WriteResultStatus;
 
 import java.io.File;

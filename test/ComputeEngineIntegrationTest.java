@@ -3,7 +3,12 @@ package test;
 import org.junit.Assert;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
-import src.interfaces.*;
+import src.interfaces.ComputationCoordinator;
+import src.interfaces.ComputeEngine;
+import src.interfaces.ComputeJobsImplementation;
+import src.interfaces.CoordinatorImpl;
+import src.interfaces.ComputeResult;
+import src.interfaces.ComputeRequest;
 
 import java.util.ArrayList;
 import java.util.List;
