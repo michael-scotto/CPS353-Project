@@ -67,18 +67,19 @@ public class DataStoreImpl implements DataStore {
          * but unless a cleanup is particularly critical, it's generally sufficient as a back-stop against weird circumstances. In this case,
          * we would at worst leak a read-lock file handle, which is NBD and certainly not worth architecting a larger solution around (honestly,
          * finalize() might even be overkill in this situation).
-         */
-//        @Override
-//        public void finalize() {
-//          if (!closed) {
-//            try {
-//              buff.close();
-//              closed = true;
-//            } catch (IOException e) {
-//              throw new RuntimeException(e);
-//            }
-//          }
-//        }
+
+        @Override
+        public void finalize() {
+          if (!closed) {
+            try {
+              buff.close();
+              closed = true;
+            } catch (IOException e) {
+              throw new RuntimeException(e);
+            }
+          }
+        }
+        */
       };
     } catch (IOException e) {
       throw new RuntimeException(e);
