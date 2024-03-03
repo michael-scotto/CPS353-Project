@@ -16,15 +16,16 @@ import java.util.concurrent.Future;
 
 public class TestMultiUser {
 
-    // TODO 1: change the type of this variable to the name you're using for your
+    // TODO 1 (done): change the type of this variable to the name you're using for your
     // User <-> ComputeEngine API
     private ComputationCoordinator coordinator;
 
     @BeforeEach
     public void initializeComputeEngine() {
-        //TODO 2: create an instance of your coordinator component; this is the component
+        //TODO 2 (done I think?): create an instance of your coordinator component; this is the component
         // that the user will make requests to
         // Store it in the 'coordinator' instance variable
+        coordinator = new ComputationCoordinator;
     }
 
     @Test
