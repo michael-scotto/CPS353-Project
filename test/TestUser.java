@@ -34,7 +34,7 @@ public class TestUser {
         request.InputConfig = i;
         request.Delimiter = delimiter;
 
-        new ComputeResult result = coordinator.compute(request);
+        ComputeResult result = coordinator.compute(request);
     }
 
 }
