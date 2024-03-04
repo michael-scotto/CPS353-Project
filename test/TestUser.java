@@ -22,10 +22,10 @@ public class TestUser {
         // TODO 4: Call the appropriate method(s) on the coordinator to get it to
         // run the compute job specified by inputPath, outputPath, and delimiter
 
-        ComputeRequest request = new ComputeRequest ;
+        ComputeRequest request = new ComputeRequest();
 
         //I could be completely off base with how this works
-        InputConfig i = new InputConfig;
+        InputConfig i = new InputConfig();
 
         //TODO: Add the input path and output path to the configs
 
