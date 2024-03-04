@@ -22,7 +22,7 @@ public class TestUser {
         // TODO 4: Call the appropriate method(s) on the coordinator to get it to
         // run the compute job specified by inputPath, outputPath, and delimiter
 
-        ComputeRequest request = new ComputeRest;
+        ComputeRequest request = new ComputeRequest ;
 
         //I could be completely off base with how this works
         InputConfig i = new InputConfig;
