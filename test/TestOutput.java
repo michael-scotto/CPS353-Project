@@ -1,6 +1,6 @@
-package test;
 
-import src.interfaces.OutputConfig;
+
+import interfaces.OutputConfig;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,9 +1,9 @@
-package test;
+
 
 import org.junit.jupiter.api.Test;
 import org.junit.Assert;
-import src.interfaces.ComputeEngine;
-import src.interfaces.ComputeJobsImplementation;
+import interfaces.ComputeEngine;
+import interfaces.ComputeJobsImplementation;
 
 public class ComputeTest {
     @Test

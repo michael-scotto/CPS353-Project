@@ -1,6 +1,6 @@
-package test;
 
-import src.interfaces.InputConfig;
+
+import interfaces.InputConfig;
 
 import java.util.ArrayList;
 import java.util.Collection;

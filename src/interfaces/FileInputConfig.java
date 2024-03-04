@@ -1,4 +1,4 @@
-package src.interfaces;
+package interfaces;
 
 public class FileInputConfig implements InputConfig {
 

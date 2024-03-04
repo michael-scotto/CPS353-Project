@@ -1,14 +1,14 @@
-package test;
+
 
 import org.junit.Assert;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
-import src.interfaces.ComputationCoordinator;
-import src.interfaces.ComputeEngine;
-import src.interfaces.ComputeRequest;
-import src.interfaces.DataStore;
-import src.interfaces.CoordinatorImpl;
-import src.interfaces.ComputeResult;
+import interfaces.ComputationCoordinator;
+import interfaces.ComputeEngine;
+import interfaces.ComputeRequest;
+import interfaces.DataStore;
+import interfaces.CoordinatorImpl;
+import interfaces.ComputeResult;
 
 public class CoordinatorTest {
     @Test
