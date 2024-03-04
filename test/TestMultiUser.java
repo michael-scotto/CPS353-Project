@@ -1,9 +1,9 @@
-package test;
+
 
 import org.junit.Assert;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import src.interfaces.ComputationCoordinator;
+import interfaces.ComputationCoordinator;
 
 import java.io.File;
 import java.io.IOException;
@@ -45,6 +45,7 @@ public class TestMultiUser {
         }
 
         // Run multi threaded
+        Executors.newFixedThreadPool(2);
         ExecutorService threadPool = Executors.newCachedThreadPool();
         List<Future<?>> results = new ArrayList<>();
         String multiThreadFilePrefix = "testMultiUser.compareMultiAndSingleThreaded.test.multiThreadOut.tmp";

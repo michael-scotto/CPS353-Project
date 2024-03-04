@@ -1,10 +1,9 @@
-package test;
 
 
-import src.interfaces.DataStore;
-import src.interfaces.WriteResult;
-import src.interfaces.InputConfig;
-import src.interfaces.OutputConfig;
+import interfaces.DataStore;
+import interfaces.WriteResult;
+import interfaces.InputConfig;
+import interfaces.OutputConfig;
 
 public class TestDataStore implements DataStore {
 

@@ -1,6 +1,6 @@
-package test;
 
-import src.interfaces.ComputationCoordinator;
+
+import interfaces.ComputationCoordinator;
 
 import java.io.File;
 
