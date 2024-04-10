@@ -1,6 +1,12 @@
 
 
 import interfaces.ComputationCoordinator;
+import interfaces.InputConfig;
+import interfaces.FileInputConfig;
+import interfaces.OutputConfig;
+import interfaces.FileOutputConfig;
+import interfaces.ComputeRequest;
+import interfaces.ComputeResult;
 
 import java.io.File;
 
@@ -22,17 +28,30 @@ public class TestUser {
         // TODO 4: Call the appropriate method(s) on the coordinator to get it to
         // run the compute job specified by inputPath, outputPath, and delimiter
 
-        ComputeRequest request = new ComputeRequest();
+        ComputeRequest request = new ComputeRequest() {
+            @Override
+            public InputConfig getInputConfig() {
+                return null;
+            }
 
-        //I could be completely off base with how this works
-        InputConfig i = new InputConfig();
+            @Override
+            public OutputConfig getOutputConfig() {
+                return null;
+            }
+
+            @Override
+            public char getDelimeter() {
+                return delimiter;
+            }
+        };
+
 
         //TODO: Add the input path and output path to the configs
 
-        //Again, I could be completely off base with how this works- I can't find anything about how to define stuff for ComputeRequest
-        //Consider this placeholder code. It's like psuedocode but instead of being fake it's just wrong, lol
-        request.InputConfig = i;
-        request.Delimiter = delimiter;
+
+        InputConfig inputConfig = new FileInputConfig(inputPath);
+
+        OutputConfig outputConfig = new FileOutputConfig(outputPath);
 
         ComputeResult result = coordinator.compute(request);
     }

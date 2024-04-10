@@ -10,6 +10,7 @@ public class CoordinatorImpl implements ComputationCoordinator {
         this.ce = ce;
     }
 
+
     @Override
     public ComputeResult compute(ComputeRequest request) {
         Iterable<Integer> integers = ds.read(request.getInputConfig());
