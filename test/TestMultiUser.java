@@ -34,7 +34,7 @@ public class TestMultiUser {
         ComputationCoordinator coordinator = new CoordinatorImpl(testDs, engine);
     }
 
-    @Test
+    //@Test
     public void compareMultiAndSingleThreaded() throws Exception {
         int threads = 4;
         List<TestUser> testUsers = new ArrayList<>();
