@@ -13,6 +13,11 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 
+import interfaces.ComputeEngine;
+import interfaces.ComputationCoordinator;
+import interfaces.ComputeJobsImplementation;
+import interfaces.CoordinatorImpl;
+
 public class TestMultiUser {
 
     // 1 (done): change the type of this variable to the name you're using for your
