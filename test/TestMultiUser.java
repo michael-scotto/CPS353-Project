@@ -1,9 +1,9 @@
 
 
+import interfaces.*;
 import org.junit.Assert;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import interfaces.ComputationCoordinator;
 
 import java.io.File;
 import java.io.IOException;
@@ -25,7 +25,9 @@ public class TestMultiUser {
         //2 (done I think?): create an instance of your coordinator component; this is the component
         // that the user will make requests to
         // Store it in the 'coordinator' instance variable
-        coordinator = new ComputationCoordinator();
+        ComputeEngine engine = new ComputeJobsImplementation();
+        TestDataStore testDs = new TestDataStore();
+        ComputationCoordinator coordinator = new CoordinatorImpl(testDs, engine);
     }
 
     @Test
