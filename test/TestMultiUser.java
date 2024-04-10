@@ -34,6 +34,8 @@ public class TestMultiUser {
         ComputationCoordinator coordinator = new CoordinatorImpl(testDs, engine);
     }
 
+
+    //DOESNT PASS GRADLE TEST - TO BE FIXED LATER
     //@Test
     public void compareMultiAndSingleThreaded() throws Exception {
         int threads = 4;
