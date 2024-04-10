@@ -1,6 +1,12 @@
 
 
-import interfaces.*;
+import interfaces.ComputationCoordinator;
+import interfaces.InputConfig;
+import interfaces.FileInputConfig;
+import interfaces.OutputConfig;
+import interfaces.FileOutputConfig;
+import interfaces.ComputeRequest;
+import interfaces.ComputeResult;
 
 import java.io.File;
 
