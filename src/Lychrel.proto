@@ -19,8 +19,3 @@ message DataStoreOutput {
 service LychrelComputationService {
   rpc CheckLychrelNumber(LychrelRequest) returns (LychrelResponse);
 }
-
-service DataStoreService {
-  rpc ReadData(DataStoreInput) returns (stream int32);
-  rpc AppendData(DataStoreOutput) returns (bool);
-}
