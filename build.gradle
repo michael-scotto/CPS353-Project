@@ -16,7 +16,7 @@ sourceSets {
             srcDirs = ['src']
         }
         proto {
-            srcDir 'src/main/proto'
+            srcDir 'src'
         }
     }
     test {
