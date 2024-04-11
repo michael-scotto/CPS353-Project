@@ -45,16 +45,16 @@ protobuf {
     protoc {
         artifact = 'com.google.protobuf:protoc:3.19.4'
     }
-     // Configure the options for generating Protocol Buffers code
-//     generateProtoTasks {
-//         all().each { task ->
-//             task.builtins {
-//                 java {
-//                     option 'lite'
-//                 }
-//             }
-//         }
-//     }
+    
+    generateProtoTasks {
+        all().each { task ->
+            task.builtins {
+                java {
+                    option 'lite'
+                }
+            }
+        }
+    }
 }
 
 test {
