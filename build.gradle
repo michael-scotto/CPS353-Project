@@ -1,3 +1,12 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.google.protobuf:protobuf-gradle-plugin:0.8.17'
+    }
+}
+
 apply plugin: 'java'
 apply plugin: 'com.google.protobuf'
 
@@ -7,7 +16,7 @@ sourceSets {
             srcDirs = ['src']
         }
         proto {
-            srcDir 'src'
+            srcDir 'src/main/proto'
         }
     }
     test {
@@ -27,7 +36,7 @@ dependencies {
     testImplementation('org.mockito:mockito-core:5.10.0')
 
     implementation 'com.google.protobuf:protobuf-java:3.19.4'
-    implementation 'io.grpc:grpc-netty-shaded:1.41.0' 
+    implementation 'io.grpc:grpc-netty-shaded:1.41.0' // or another appropriate gRPC library
     implementation 'io.grpc:grpc-protobuf:1.41.0'
     implementation 'io.grpc:grpc-stub:1.41.0'
 }
