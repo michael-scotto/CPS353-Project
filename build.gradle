@@ -1,28 +1,19 @@
-buildscript {
-    repositories {
-        mavenCentral()
-    }
-    dependencies {
-        classpath 'com.google.protobuf:protobuf-gradle-plugin:0.9.4'
-    }
-}
-
 apply plugin: 'java'
-apply plugin: 'com.google.protobuf'
+apply plugin: 'id "com.google.protobuf" version "0.9.4"'
 
 sourceSets {
-    main {
-        java {
-            srcDirs = ['src']
-        }
+	main {
+	    java {
+		    srcDirs = ['src']
+	  }
         proto {
             srcDir 'src'
         }
-    }
-    test {
-        java {
-            srcDirs = ['test']
-        }
+	}
+	test {
+	    java {
+	        srcDirs = ['test']
+	    }
     }
 }
 
@@ -33,28 +24,24 @@ repositories {
 dependencies {
     testImplementation('junit:junit:4.12')
     testImplementation('org.junit.jupiter:junit-jupiter:5.8.2')
-    testImplementation('org.mockito:mockito-core:5.10.0')
+	testImplementation('org.mockito:mockito-core:5.10.0')
 
-    implementation 'com.google.protobuf:protobuf-java:3.19.4'
-    implementation 'io.grpc:grpc-netty-shaded:1.41.0'
-    implementation 'io.grpc:grpc-protobuf:1.41.0'
-    implementation 'io.grpc:grpc-stub:1.41.0'
+    implementation 'com.google.protobuf:protobuf-javalite:3.8.0'
 }
 
 protobuf {
     protoc {
-        artifact = 'com.google.protobuf:protoc:3.19.4'
+        artifact = 'com.google.protobuf:protoc:3.8.0'
     }
-     // Configure the options for generating Protocol Buffers code
-//     generateProtoTasks {
-//         all().each { task ->
-//             task.builtins {
-//                 java {
-//                     option 'lite'
-//                 }
-//             }
-//         }
-//     }
+    generateProtoTasks {
+        all().configureEach { task -> 
+            task.builtins {
+                java {
+                    option "lite"
+                }
+            }
+        }
+    }   
 }
 
 test {
