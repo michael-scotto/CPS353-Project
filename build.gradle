@@ -36,7 +36,7 @@ dependencies {
     testImplementation('org.mockito:mockito-core:5.10.0')
 
     implementation 'com.google.protobuf:protobuf-java:3.19.4'
-    implementation 'io.grpc:grpc-netty-shaded:1.41.0' // or another appropriate gRPC library
+    implementation 'io.grpc:grpc-netty-shaded:1.41.0'
     implementation 'io.grpc:grpc-protobuf:1.41.0'
     implementation 'io.grpc:grpc-stub:1.41.0'
 }
@@ -45,15 +45,16 @@ protobuf {
     protoc {
         artifact = 'com.google.protobuf:protoc:3.19.4'
     }
-    generateProtoTasks {
-        all().each { task ->
-            task.builtins {
-                java {
-                    option 'lite'
-                }
-            }
-        }
-    }
+     // Configure the options for generating Protocol Buffers code
+//     generateProtoTasks {
+//         all().each { task ->
+//             task.builtins {
+//                 java {
+//                     option 'lite'
+//                 }
+//             }
+//         }
+//     }
 }
 
 test {
