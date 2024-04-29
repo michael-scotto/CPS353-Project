@@ -1,6 +1,7 @@
-package src;
+import grpcDataService.Lychrel;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
+import grpcDataService.DataStoreServiceGrpc;
 
 public class LychrelComputation {
     
@@ -17,10 +18,11 @@ public class LychrelComputation {
             DataStoreServiceGrpc.DataStoreServiceBlockingStub blockingStub = DataStoreServiceGrpc.newBlockingStub(channel);
 
             // Create request
-            DataStoreInput input = DataStoreInput.newBuilder().setInputValue(num).build();
+            Lychrel.DataStoreInput input = Lychrel.DataStoreInput.newBuilder().setInputValue((int) num).build();
+            //NOTE: maybe the casting to int should be changed, I'm not sure why setInputValue only takes in int.
 
             // Call gRPC method
-            DataStoreOutput response = blockingStub.appendData(input);
+            Lychrel.DataStoreOutput response = blockingStub.appendData(input);
 
             // Process response
             return response.getOutputValue();
