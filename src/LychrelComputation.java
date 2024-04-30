@@ -1,7 +1,5 @@
-import grpcDataService.Lychrel;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
-import grpcDataService.DataStoreServiceGrpc;
 
 public class LychrelComputation {
     
