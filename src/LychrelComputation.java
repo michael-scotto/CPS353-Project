@@ -1,7 +1,36 @@
-package src;
+import grpcDataService.Lychrel;
+import io.grpc.ManagedChannel;
+import io.grpc.ManagedChannelBuilder;
+import grpcDataService.DataStoreServiceGrpc;
 
 public class LychrelComputation {
+    
+    private static final String DATASTORE_HOST = "localhost";
+    private static final int DATASTORE_PORT = 50052;
 
+    // Method to call the gRPC client for data store
+    private static boolean sendDataToDataStore(long num) {
+        ManagedChannel channel = ManagedChannelBuilder.forAddress(DATASTORE_HOST, DATASTORE_PORT)
+                .usePlaintext()
+                .build();
+
+        try {
+            DataStoreServiceGrpc.DataStoreServiceBlockingStub blockingStub = DataStoreServiceGrpc.newBlockingStub(channel);
+
+            // Create request
+            Lychrel.DataStoreInput input = Lychrel.DataStoreInput.newBuilder().setInputValue((int) num).build();
+            //NOTE: maybe the casting to int should be changed, I'm not sure why setInputValue only takes in int.
+
+            // Call gRPC method
+            Lychrel.DataStoreOutput response = blockingStub.appendData(input);
+
+            // Process response
+            return response.getOutputValue();
+        } finally {
+            channel.shutdown();
+        }
+    }
+    
     //If more than 60 we will assume it is a lychrel number
     private static int maxIterations = 60;
 
@@ -12,6 +41,8 @@ public class LychrelComputation {
             if (palindromeCheck(num)) {
                 return false;
             }
+            // Send data to data store
+            sendDataToDataStore(num);
         }
         return true;
     }

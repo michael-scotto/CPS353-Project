@@ -8,3 +8,5 @@
 
  # System Diagram
  ![System Diagram](https://github.com/michael-scotto/CPS353-Project/blob/main/SystemDiagram.png?raw=true)
+
+[5 Whys](https://docs.google.com/document/d/16s5g4C6xe30pJ1RPJAnqLJcNntY0roE2u1NrQInokto/edit?usp=sharing)
