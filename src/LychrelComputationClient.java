@@ -1,5 +1,7 @@
 import java.util.concurrent.TimeUnit;
 
+import grpcDataService.LychrelComputatioSnerviceGrpc;
+import grpcDataService.Lychrel;
 import io.grpc.Channel;
 import io.grpc.Grpc;
 import io.grpc.InsecureChannelCredentials;
@@ -9,18 +11,18 @@ import io.grpc.ManagedChannelBuilder;
 
 public class LychrelComputationClient {
     private final ManagedChannel channel;
-    private final DataStoreServiceGrpc.DataStoreServiceBlockingStub blockingStub;
+    private final LychrelComputatioSnerviceGrpc.LychrelComputatioSnerviceBlockingStub blockingStub;
 
     public LychrelComputationClient(String host, int port) {
         this.channel = ManagedChannelBuilder.forAddress(host, port)
                 .usePlaintext()
                 .build();
-        this.blockingStub = DataStoreServiceGrpc.newBlockingStub(channel);
+        this.blockingStub = LychrelComputatioSnerviceGrpc.newBlockingStub(channel);
     }
 
     public boolean checkLychrelNumber(long number) {
-        LychrelRequest request = LychrelRequest.newBuilder().setNumber(number).build();
-        LychrelResponse response = blockingStub.checkLychrelNumber(request);
+        Lychrel.LychrelRequest request = Lychrel.LychrelRequest.newBuilder().setNumber(number).build();
+        Lychrel.LychrelResponse response = blockingStub.checkLychrelNumber(request);
         return response.getIsLychrel();
     }
 
