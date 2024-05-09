@@ -35,7 +35,7 @@ public class LychrelComputation {
     private static int maxIterations = 60;
 
     //method to call other methods that do calculations
-    private static boolean lychrelCheck(long num){
+    public static boolean lychrelCheck(long num){
         for (int i=0; i<maxIterations; i++) {
             num = num + reverse(num);
             if (palindromeCheck(num)) {
