@@ -17,7 +17,7 @@ message DataStoreOutput {
   bool output_value = 1;
 }
 
-service LychrelComputationService {
+service LychrelComputatioSnervice {
   rpc CheckLychrelNumber(LychrelRequest) returns (LychrelResponse);
 }
 
