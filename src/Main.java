@@ -9,7 +9,7 @@ public class Main {
         int b = sc.nextInt();
         if (b==0){
             int num = sc.nextInt();
-            //LychrelComputation.lychrelCheck(num);
+            LychrelComputation.lychrelCheck(num);
             System.out.println(num); //debug line
         } else if (b==1){
             String name = sc.nextLine();

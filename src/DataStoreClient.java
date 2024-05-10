@@ -5,11 +5,11 @@ import io.grpc.ManagedChannelBuilder;
 
 import java.util.concurrent.TimeUnit;
 
-public class DataStoreServiceClient {
+public class DataStoreClient {
     private final ManagedChannel channel;
     private final DataStoreServiceGrpc.DataStoreServiceBlockingStub blockingStub;
 
-    public DataStoreServiceClient(String host, int port) {
+    public DataStoreClient(String host, int port) {
         this.channel = ManagedChannelBuilder.forAddress(host, port)
                 .usePlaintext()
                 .build();
@@ -29,7 +29,7 @@ public class DataStoreServiceClient {
     }
 
     public static void main(String[] args) throws Exception {
-        DataStoreServiceClient client = new DataStoreServiceClient("localhost", 50053);
+        DataStoreClient client = new DataStoreClient("localhost", 50053);
 
         //Test
         int data = 123; // Example data
