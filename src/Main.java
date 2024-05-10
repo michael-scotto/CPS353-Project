@@ -9,9 +9,10 @@ public class Main {
         int b = sc.nextInt();
         if (b==0){
             int num = sc.nextInt();
-            LychrelComputation.lychrelCheck(num);
+            System.out.println(LychrelComputation.lychrelCheck(num));
             System.out.println(num); //debug line
         } else if (b==1){
+            //THIS DOES NOT WORK YET
             String name = sc.nextLine();
             File file = new File(name);
             try {

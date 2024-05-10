@@ -6,10 +6,10 @@ import io.grpc.ManagedChannelBuilder;
 public class LychrelComputation {
     
     private static final String DATASTORE_HOST = "localhost";
-    private static final int DATASTORE_PORT = 50052;
+    private static final int DATASTORE_PORT = 50053;
 
     // Method to call the gRPC client for data store
-    private static boolean sendDataToDataStore(long num) {
+    static boolean sendDataToDataStore(long num) {
         ManagedChannel channel = ManagedChannelBuilder.forAddress(DATASTORE_HOST, DATASTORE_PORT)
                 .usePlaintext()
                 .build();
@@ -40,6 +40,7 @@ public class LychrelComputation {
             if (palindromeCheck(num)) {
                 return false;
             }
+            System.out.println(i + num); //debug line
             // Send data to data store
             sendDataToDataStore(num);
         }
