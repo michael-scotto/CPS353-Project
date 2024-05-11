@@ -43,8 +43,7 @@ public class LychrelComputation {
             if (database[i][0]==num){
                 database[i][1]= -1;
                 return true;
-            }
-            else if (database[i][1]==0){
+            } else if (database[i][1]==0){
                 database[i][0]=num;
                 database[i][1]= -1;
                 return true;
