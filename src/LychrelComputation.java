@@ -85,7 +85,8 @@ public class LychrelComputation {
             }
             System.out.println(i+1 + " " + num); //debug line
             // Send data to data store
-            sendDataToDataStore(num);
+            //system not working when computation goes for longer than 2 iterations but works without line 89
+            //sendDataToDataStore(num);
         }
             return true;
         }
