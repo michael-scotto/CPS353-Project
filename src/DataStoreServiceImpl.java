@@ -8,7 +8,6 @@ public class DataStoreServiceImpl extends grpcDataService.DataStoreServiceGrpc.D
         Lychrel.DataStoreOutput response;
         try {
             long num = request.getInputValue();
-            //dummy line
             response = Lychrel.DataStoreOutput.newBuilder().setOutputValue(LychrelComputation.sendToDatabase((int) num)).build();
         } catch (Exception e){
             response = Lychrel.DataStoreOutput.newBuilder().setOutputValue(false).build();
