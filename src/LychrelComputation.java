@@ -49,9 +49,9 @@ public class LychrelComputation {
                 database[i][1]= -1;
                 return true;
             }
-            }
-        return false;
         }
+    return false;
+    }
 
 
     //If more than 60 we will assume it is a lychrel number
