@@ -85,7 +85,8 @@ public class LychrelComputation {
             }
             System.out.println(i+1 + " " + num); //debug line
             // Send data to data store
-            sendDataToDataStore(num);
+            //when computation goes over 2 iterations and reaches this line. it fails, but works when line is not there
+            //sendDataToDataStore(num);
         }
             return true;
         }
