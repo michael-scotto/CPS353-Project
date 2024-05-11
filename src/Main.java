@@ -18,13 +18,12 @@ public class Main {
                 File file = new File(name);
                 try {
                     sc = new Scanner(file);
+                    while (sc.hasNextInt()) {
+                        int num = sc.nextInt();
+                        LychrelComputation.lychrelCheck(num);
+                        System.out.println(num); //debug line
                 } catch (FileNotFoundException e) {
                     throw new RuntimeException(e);
-                }
-                while (sc.hasNextInt()) {
-                    int num = sc.nextInt();
-                    //LychrelComputation.lychrelCheck(num);
-                    System.out.println(num); //debug line
                 }
             } else {
                 System.out.println("Invalid input, you have to put 0 or 1.");
