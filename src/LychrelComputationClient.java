@@ -1,19 +1,19 @@
 import java.util.concurrent.TimeUnit;
 
-import grpcDataService.LychrelComputatioSnerviceGrpc;
+import grpcDataService.LychrelComputationServiceGrpc;
 import grpcDataService.Lychrel;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 
 public class LychrelComputationClient {
     private final ManagedChannel channel;
-    private final LychrelComputatioSnerviceGrpc.LychrelComputatioSnerviceBlockingStub blockingStub;
+    private final LychrelComputationServiceGrpc.LychrelComputationServiceBlockingStub blockingStub;
 
     public LychrelComputationClient(String host, int port) {
         this.channel = ManagedChannelBuilder.forAddress(host, port)
                 .usePlaintext()
                 .build();
-        this.blockingStub = LychrelComputatioSnerviceGrpc.newBlockingStub(channel);
+        this.blockingStub = LychrelComputationServiceGrpc.newBlockingStub(channel);
     }
 
     public boolean checkLychrelNumber(long number) {
