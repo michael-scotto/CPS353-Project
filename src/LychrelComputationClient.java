@@ -2,11 +2,7 @@ import java.util.concurrent.TimeUnit;
 
 import grpcDataService.LychrelComputatioSnerviceGrpc;
 import grpcDataService.Lychrel;
-import io.grpc.Channel;
-import io.grpc.Grpc;
-import io.grpc.InsecureChannelCredentials;
 import io.grpc.ManagedChannel;
-import io.grpc.StatusRuntimeException;
 import io.grpc.ManagedChannelBuilder;
 
 public class LychrelComputationClient {

@@ -5,7 +5,7 @@ import io.grpc.protobuf.services.ProtoReflectionService;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
-public class DataStoreServiceServer {
+public class DataStoreServer {
     private Server server;
 
     private void start() throws IOException {
@@ -24,7 +24,7 @@ public class DataStoreServiceServer {
             public void run() {
                 System.err.println("*** shutting down gRPC server since JVM is shutting down");
                 try {
-                    DataStoreServiceServer.this.stop();
+                    DataStoreServer.this.stop();
                 } catch (InterruptedException e) {
                     e.printStackTrace(System.err);
                 }
@@ -46,7 +46,7 @@ public class DataStoreServiceServer {
     }
 
     public static void main(String[] args) throws IOException, InterruptedException {
-        DataStoreServiceServer server = new DataStoreServiceServer();
+        DataStoreServer server = new DataStoreServer();
         server.start();
         server.blockUntilShutdown();
     }
