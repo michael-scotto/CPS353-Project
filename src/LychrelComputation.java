@@ -24,11 +24,15 @@ public class LychrelComputation {
             // Create request
             Lychrel.DataStoreInput input = Lychrel.DataStoreInput.newBuilder().setInputValue((int) num).build();
 
+            //Call this method again because in DataStoreServiceImpl it doesn't properly write to the database, only checks validity.
+            sendToDatabase((int) num);
+
             // Call gRPC method
             Lychrel.DataStoreOutput response = blockingStub.appendData(input);
 
             // Process response
             return response.getOutputValue();
+
         } finally {
             channel.shutdown();
         }
@@ -36,14 +40,17 @@ public class LychrelComputation {
 
     static boolean sendToDatabase(int num){
         for (int i=0;i<database.length-1;i++){
-            if (database[i][1]==0){
+            if (database[i][0]==num){
+                database[i][1]= -1;
+                return true;
+            } else if (database[i][1]==0){
                 database[i][0]=num;
-                database[i][1]=-1;
+                database[i][1]= -1;
                 return true;
             }
-            }
-        return false;
         }
+    return false;
+    }
 
 
     //If more than 60 we will assume it is a lychrel number
@@ -60,11 +67,13 @@ public class LychrelComputation {
                         if (palindromeCheck(num)) {
                             database[j][1] = 1;
                             return false;
+                        } else {
+                            System.out.println(i + 1 + " " + num); //debug line
+                            // Send data to data store
+                            sendDataToDataStore(num);
                         }
-                        System.out.println(i+1 + " " + num); //debug line
-                        // Send data to data store
-                        sendDataToDataStore(num);
                     } else if (database[j][1] == 1) {
+                        System.out.println("Already in database");
                         return false;
                     } else {
                         System.out.println("Already in database");
@@ -76,6 +85,7 @@ public class LychrelComputation {
                 //If it's a palindrome, adds to database without the DataStoreService
                 for (int j = 0; j < database.length - 1; j++) {
                     if (database[j][1] == 0){ //checks for if whatever's saved there has no saved palindrome value
+                        database[j][0] = num;
                         database[j][1] = 1;
                         return false;
                     }
@@ -85,6 +95,7 @@ public class LychrelComputation {
             }
             System.out.println(i+1 + " " + num); //debug line
             // Send data to data store
+            //when computation goes over 2 iterations and reaches this line. it fails, but works when line is not there
             sendDataToDataStore(num);
         }
             return true;
